@@ -1,10 +1,10 @@
 # TakeNotes
 
-## Homework 11: Express Note Taker
+### Homework 11: Express Note Taker
 
 Create an application that can be used to write, save, and delete notes. This application will use an express backend and save and retrieve note data from a JSON file. The application frontend has already been created, it's your job to build the backend and connect the two.
 
-### User Story
+## User Story
 
 ```
 AS A user, I want to be able to write and save notes
