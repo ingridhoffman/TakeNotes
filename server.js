@@ -33,23 +33,39 @@ app.post("/api/notes", (req, res) => {
 	const newNote = req.body;
 	// add timestamp as note ID
 	const newID = Date.now();
-	newNote.ID = newID;
-	// get existing database file
+	newNote.id = newID;
+	// get existing notes
 	fs.readFile(dbPath, (err, data) => {
 		if (err) throw err;
-		let notes = JSON.parse(data);
+		const notes = JSON.parse(data);
 		// add new note
 		notes.push(newNote);
-		let writeNotes = JSON.stringify(notes);
+		const writeNotes = JSON.stringify(notes);
 		fs.writeFile(dbPath, writeNotes, err => {
 			if (err) throw err;
-			console.log("A new note has been added!");
+			res.sendFile(dbPath);
+		});
+	});
+});
+// API route - delete note
+app.delete("/api/notes/:noteID", (req, res) => {
+	// get id of note to be deleted
+	const deleteID = parseInt(req.params.noteID);
+	// get existing notes
+	fs.readFile(dbPath, (err, data) => {
+		if (err) throw err;
+		const notes = JSON.parse(data);
+		// delete selected note
+		const revisedNotes = notes.filter(note => note.id !== deleteID);
+		const writeNotes = JSON.stringify(revisedNotes);
+		fs.writeFile(dbPath, writeNotes, err => {
+			if (err) throw err;
 			res.sendFile(dbPath);
 		});
 	});
 });
 
-// Server is Listening
+// SERVER LISTENING
 app.listen(PORT, function() {
 	console.log("App listening on PORT " + PORT);
 });
