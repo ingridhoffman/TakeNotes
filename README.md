@@ -34,4 +34,11 @@ THEN it should be removed from the database and the Notes page
 
 ## Developer Notes
 
+### Known Issues
+
+- If I use GET \* as instructed then I can't navigate to to the notes page
+- Why are we using a JSON database file instead of a .js like in the Hot Restaurant activity?
+- Instructions say to read file and send data but works to just send file. Is that okay?
+- Should I use read and write sync functions so they block rather than nesting write inside of read?
+
 ### Application URL
