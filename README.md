@@ -33,5 +33,3 @@ THEN it should be removed from the database and the Notes page
 ```
 
 ## Application URL
-
-https://ingridhoffman.github.io/TakeNotes
