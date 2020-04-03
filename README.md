@@ -32,12 +32,6 @@ WHEN I delete a note
 THEN it should be removed from the database and the Notes page
 ```
 
-## Developer Notes
+## Application URL
 
-### Known Issues
-
-- If I use GET \* as instructed then I can't navigate to to the notes page
-- Instructions say to read file and send data but works to just send file. Is that okay?
-- Should I use read and write sync functions so they block rather than nesting callbacks?
-
-### Application URL
+https://ingridhoffman.github.io/TakeNotes
